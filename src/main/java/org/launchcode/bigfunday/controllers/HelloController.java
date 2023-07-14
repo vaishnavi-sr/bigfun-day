@@ -2,7 +2,11 @@ package org.launchcode.bigfunday.controllers;
 
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class HelloController {
@@ -40,5 +44,15 @@ public class HelloController {
     @GetMapping("form")
     public String helloForm() {
         return "form";
+    }
+
+    @GetMapping("fun-list")
+    public String funList(Model model){
+        List<String> names = new ArrayList<>();
+        names.add("Great day!");
+        names.add("Super day!");
+        names.add("Fantastic day!");
+        model.addAttribute("names",names);
+        return "funList";
     }
 }
