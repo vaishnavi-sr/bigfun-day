@@ -46,13 +46,22 @@ public class HelloController {
         return "form";
     }
 
-    @GetMapping("fun-list")
-    public String funList(Model model){
-        List<String> names = new ArrayList<>();
-        names.add("Great day!");
-        names.add("Super day!");
-        names.add("Fantastic day!");
-        model.addAttribute("names",names);
-        return "funList";
-    }
+//    @GetMapping("fun-list")
+//    public String funList(Model model){
+//        List<String> names = new ArrayList<>();
+//        names.add("Great day!");
+//        names.add("Super day!");
+//        names.add("Fantastic day!");
+//        model.addAttribute("names",names);
+//        return "funList";
+
+    @GetMapping("num-list")
+    public String numList(Model model){
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        model.addAttribute("numbers",numbers);
+        return "numberList";
+        }
 }
